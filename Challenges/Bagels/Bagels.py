@@ -27,8 +27,9 @@ print(" I have tought of a number, and you have 10 guesses to get it.")
 
 while Guess == False:
     print("Guess: " + str(TryCounter))
-    TryCounter = TryCounter -1 #Counter Goes Down
+
     print("Enter 3digit guess")
+
     PlayerInput = input() #User should only be able to enter 3 digits
     #Convert player input to array
     PlayerInput = list(map(int, str(PlayerInput)))
@@ -38,29 +39,23 @@ while Guess == False:
    #Convert and compare array values from player to BagelCode
    #Recreate as Function later.!
 
-    for x in BagelCode:
-      for y in PlayerInput:
-        print(x, y)
-        #All Digits Wrong
-        if int(x[0]) != int(y[0]) : #Error
-            print("Bagels")
+    #All Digits Wrong
+    if (BagelCode[0] != PlayerInput[0]) and (BagelCode[1] != PlayerInput[1]) and (BagelCode[2] != PlayerInput[2]): #Works but needs to be done better with for loop later
+        print("Bagels")
+        TryCounter = TryCounter -1 #Counter Goes Down
+    #All Digits Correct
+    if (BagelCode[0] == PlayerInput[0]) and (BagelCode[1] == PlayerInput[1]) and (BagelCode[2] == PlayerInput[2]): #Works but needs to be done better with for loop later
+        print("You got it!")
+        print("Do you want to play again? (y or n)")
+        PlayerDecision = input()
+        if PlayerDecision == 'y':
+            TryCounter == 10
+        else:
+            print("Thank you for playing.")
+            Guess == True
+            exit() #/
 
 
-'''
-...statements...
-        #All Digits Wrong
-    /#  if int(x[0]) == int(y[0]):
-           print("You got it!")
-            print("Do you want to play again? (y or n)")
-            PlayerInput = input()
-            if PlayerInput == 'y':
-               Guess == False
-               TryCounter == 10
-            else:
-                print("Thank you for playing.")
-                Guess == True
-                SystemExit #/
 
-'''
 
 
