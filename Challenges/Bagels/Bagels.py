@@ -55,6 +55,13 @@ while Guess == False:
             Guess == True
             exit() #/
 
+    for i in range(len(PlayerInput)):
+        if PlayerInput[i] == BagelCode[i]:
+            print("Fermi")
+        elif PlayerInput[i] in BagelCode:
+            print("Pico")
+            
+
 
 
 
